@@ -5,7 +5,6 @@
 package Logic;
 
 import java.util.Date;
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -25,7 +24,7 @@ public class TimeCalculation {
         final double MS_PER_SECUND = 1000;
         long START_MS = System.currentTimeMillis();
         long TIME_SPENT_MS = System.currentTimeMillis() - START_MS;
-        
+
         double realTime = (float) (TIME_SPENT_MS / MS_PER_SECUND);
 
         return realTime;
@@ -36,7 +35,7 @@ public class TimeCalculation {
         final double NS_PER_SECUND = 1000000000;
         long START_NS = System.nanoTime();
         long TIME_SPENT_NS = System.nanoTime() - START_NS;
-       // algoritms.BubbleSort();
+        // algoritms.BubbleSort();
         double realTime = (float) (TIME_SPENT_NS / NS_PER_SECUND);
 
         return realTime;
@@ -48,15 +47,18 @@ public class TimeCalculation {
 
         System.out.println("We are testing at: " + new Date()
                 + "\n Algorithm name: BubbleSort");// <- Name of the algorithm you are going to test
+
         //algoritms.mergeSort();
         algoritms.BubbleSort();
+
         resultMili = ms_Calculation();
         //Algorithm test in miliseconds:
         algoritms.BubbleSort();
         //algoritms.mergeSort();
         resultNano = ns_Calculation();
         //Algorithm test in nanoseconds:
-        
+        //algoritms.mergeSort();
+        algoritms.BubbleSort();
         System.out.println("TEST: Results from the execute"
                 + "\n" + "The algorithm spent : " + resultMili + " miliSeconds"
                 + "\n" + "The algorithm spent : " + resultNano + " nanoSeconds"
