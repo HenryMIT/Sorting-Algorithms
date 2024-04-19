@@ -56,21 +56,50 @@ public class Algorithms {
     }
 
     //Unstable algorithms
-    public void ShellSort() {
-        int n = listNumber.length;
-        int gap = n / 2; // Divide the array into 2 for the first time
-        while (gap > 0) {
-            for (int i = gap; i < n; i++) {
-                int key = listNumber[i];
-                int j = i;
-                while (j >= gap && listNumber[j - gap] > key) {
-                    listNumber[j] = listNumber[j - gap];
-                    j -= gap;
+   public void shell() {
+        createRandomArray();
+        
+        int jump, i, j, k, auxiliar;
+        jump = listNumber.length / 2;
+        while (jump > 0) {
+            for (i = jump; i < listNumber.length; i++) {
+                j = i - jump;
+                while (j >= 0) {
+                    k = j + jump;
+                    if (listNumber[j] <= listNumber[k]) {
+                        j = -1;
+                    } else {
+                        auxiliar = listNumber[j];
+                        listNumber[j] = listNumber[k];
+                        listNumber[k] = auxiliar;
+                        j -= jump;
+                    }
                 }
-                listNumber[j] = key;
+
             }
-            gap /= 2;//Divide the previous interval into 2
+            jump = jump / 2;
         }
+        System.out.println("Sort Array with Shell:");
+        showArray();
+    }
+
+    public void showArray() {
+        int counter = 0;
+        for (int i = 0; i < listNumber.length; i++) {
+            System.out.print(listNumber[i] + "-");
+            if (counter == 10) {
+                System.out.println(listNumber[i] + "-");
+                counter=0;
+            }
+            counter++;
+        }
+    }
+    
+    public int[] createRandomArray() {
+        for (int i = 0; i < listNumber.length; i++) {
+            listNumber[i] = (int) (Math.random() * Integer.MAX_VALUE + 1);
+        }
+        return listNumber;
     }
 
     public void QuickSort(int start, int end) {
