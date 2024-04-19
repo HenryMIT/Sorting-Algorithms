@@ -61,7 +61,7 @@ public class Algorithms {
         int gap = n / 2; // Divide the array into 2 for the first time
         while (gap > 0) {
             for (int i = gap; i < n; i++) {
-                int key = listNumber[i];                               
+                int key = listNumber[i];
                 int j = i;
                 while (j >= gap && listNumber[j - gap] > key) {
                     listNumber[j] = listNumber[j - gap];
@@ -83,7 +83,53 @@ public class Algorithms {
     }
 
     public void RadixSort() {
+        int n = listNumber.length;
+        int max = getMax(listNumber);
 
+        for (int exp = 1; max / exp > 0; exp *= 10) {
+            // Initialize output and count arrays
+            int[] output = new int[n];  // Array to store the sorted result
+            int[] count = new int[10];  // Array to count the frequency of digits (0-9)
+
+            // Count the frequency of each digit in the current position (exp)
+            // Traverse the listNumber array to update the count array
+            for (int i = 0; i < n; i++) {
+                count[(listNumber[i] / exp) % 10]++;
+            }
+
+            // Update the count array to represent the position of each digit in the sorted array
+            // Calculate cumulative counts for each digit
+            for (int i = 1; i < 10; i++) {
+                count[i] += count[i - 1];
+            }
+
+            // Build the sorted array based on the current digit (exp) and count array
+            // Traverse the listNumber array from right to left to maintain stability
+            for (int i = n - 1; i >= 0; i--) {
+                // Place the elements in their correct positions in the output array
+                // based on the count of the current digit
+                output[count[(listNumber[i] / exp) % 10] - 1] = listNumber[i];
+
+                // Decrease the count for the current digit
+                count[(listNumber[i] / exp) % 10]--;
+            }
+
+            // Copy the sorted array from the output array back to the original listNumber array
+            for (int i = 0; i < n; i++) {
+                listNumber[i] = output[i];
+            }
+        }
+
+    }
+
+    private int getMax(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
     }
 
 }
