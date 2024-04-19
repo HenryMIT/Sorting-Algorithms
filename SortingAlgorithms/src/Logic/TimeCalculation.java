@@ -74,16 +74,25 @@ public class TimeCalculation {
         double resultMili2 = 0;
 
         System.out.println("We are testing at: " + new Date()
-                + "\n Algorithm name: ");
+                + "\n algorithm name 1: "// <- Name algorithm 1 to be compared
+                + "\n algorithm name 2: ");// <- Name algorithm 2 to be compared
         resultMili = ms_Calculation();
+        //Algorithm test in miliseconds:
+
+        resultMili2 = ms_Calculation();
         //Algorithm test in miliseconds:
 
         resultNano = ns_Calculation();
         //Algorithm test in nanoseconds:
 
+        resultNano2 = ns_Calculation();
+        //Algorithm test in nanoseconds:
+
         System.out.println("TEST: Results from the execute"
-                + "\n" + "The algorithm spent : " + resultMili + " miliSeconds"
-                + "\n" + "The algorithm spent : " + resultNano + " nanoSeconds"
+                + "\n" + "The algorithm 1 spent : " + resultMili + " miliSeconds"
+                + "\n" + "The algorithm 2 spent : " + resultMili2 + " miliSeconds"
+                + "\n" + "The algorithm 1 spent : " + resultNano + " nanoSeconds"
+                + "\n" + "The algorithm 2 spent : " + resultNano2 + " nanoSeconds"
                 + "\n-----------------------------------------");
     }
 
@@ -97,8 +106,11 @@ public class TimeCalculation {
             double resultMili = 0;
 
             @Override
-            public void run() {
-
+            public void run() {            
+            //Enter the test method you want to run:
+            
+            simpleTest();
+            
             }// end run
         };//End of ImplicitClass 
 
