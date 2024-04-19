@@ -4,10 +4,19 @@
  */
 package Presentation;
 
+import Logic.TimeCalculation;
+
 /**
  *
  * @author Usuario
  */
 public class SortingAlgorithmsTest {
+
+    public SortingAlgorithmsTest() {
+        TimeCalculation tc=new TimeCalculation();
+        tc.repeatCalculartion();
+    }
+    
+    
     
 }

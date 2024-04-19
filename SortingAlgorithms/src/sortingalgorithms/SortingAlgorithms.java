@@ -4,6 +4,8 @@
  */
 package sortingalgorithms;
 
+import Presentation.SortingAlgorithmsTest;
+
 /**
  *
  * @author Usuario
@@ -15,6 +17,8 @@ public class SortingAlgorithms {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        SortingAlgorithmsTest sat=new SortingAlgorithmsTest();
+        
     }
     
 }
