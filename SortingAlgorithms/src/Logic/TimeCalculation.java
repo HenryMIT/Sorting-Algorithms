@@ -48,10 +48,12 @@ public class TimeCalculation {
 
         System.out.println("We are testing at: " + new Date()
                 + "\n Algorithm name: BubbleSort");// <- Name of the algorithm you are going to test
+        //algoritms.mergeSort();
         algoritms.BubbleSort();
         resultMili = ms_Calculation();
         //Algorithm test in miliseconds:
         algoritms.BubbleSort();
+        //algoritms.mergeSort();
         resultNano = ns_Calculation();
         //Algorithm test in nanoseconds:
         
