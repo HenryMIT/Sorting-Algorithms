@@ -11,7 +11,8 @@ import java.util.Random;
  * @author Usuario
  */
 public class Algorithms {
-     
+    
+    //Atribute
     int[] listNumber=new int[100000];
     
     public Algorithms() {
@@ -27,7 +28,7 @@ public class Algorithms {
     }
 
     //Basic algorithm
-    public void BubbleSort(int[] listNumber) {
+    public void BubbleSort() {
         int temp = 0;
         for (int i = 0; i < listNumber.length; i++) {
             for (int j = 0; j < 10; j++) {
@@ -41,11 +42,11 @@ public class Algorithms {
     }
 
     //Unstable algorithms
-    public void ShellSort(int[] listNumber) {
+    public void ShellSort() {
 
     }
 
-    public void QuickSort(int[] listNumber) {
+    public void QuickSort() {
 
     }
 
