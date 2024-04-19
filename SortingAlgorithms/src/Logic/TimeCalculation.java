@@ -30,6 +30,14 @@ public class TimeCalculation {
         }
     }
 
+    public void printList() {
+        System.out.println("List Number {");
+        for (int i = 0; i < arrayTest.length; i++) {
+            System.out.println(arrayTest[i]);
+        }
+        System.out.println("}");
+    }
+
     public double ms_Calculation() {
         final double MS_PER_SECUND = 1000;
         long START_MS = System.currentTimeMillis();
@@ -106,16 +114,16 @@ public class TimeCalculation {
             double resultMili = 0;
 
             @Override
-            public void run() {            
-            //Enter the test method you want to run:
-            
-            simpleTest();
-            
+            public void run() {
+                //Enter the test method you want to run:
+
+                simpleTest();
+
             }// end run
         };//End of ImplicitClass 
 
         // Schedule
-        timer.schedule(reapeat, 0, 30);
+        timer.schedule(reapeat, 0, 10);
     }// end reapeat calculation 
 
 }
