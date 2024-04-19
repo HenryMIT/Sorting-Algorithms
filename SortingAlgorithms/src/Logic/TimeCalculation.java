@@ -5,7 +5,6 @@
 package Logic;
 
 import java.util.Date;
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -48,13 +47,12 @@ public class TimeCalculation {
 
         System.out.println("We are testing at: " + new Date()
                 + "\n Algorithm name: BubbleSort");// <- Name of the algorithm you are going to test
-        algoritms.BubbleSort();
         resultMili = ms_Calculation();
         //Algorithm test in miliseconds:
         algoritms.BubbleSort();
         resultNano = ns_Calculation();
         //Algorithm test in nanoseconds:
-        
+        algoritms.BubbleSort();
         System.out.println("TEST: Results from the execute"
                 + "\n" + "The algorithm spent : " + resultMili + " miliSeconds"
                 + "\n" + "The algorithm spent : " + resultNano + " nanoSeconds"
