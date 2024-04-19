@@ -61,7 +61,7 @@ public class Algorithms {
         int gap = n / 2; // Divide the array into 2 for the first time
         while (gap > 0) {
             for (int i = gap; i < n; i++) {
-                int key = listNumber[i];                               
+                int key = listNumber[i];
                 int j = i;
                 while (j >= gap && listNumber[j - gap] > key) {
                     listNumber[j] = listNumber[j - gap];
@@ -73,8 +73,42 @@ public class Algorithms {
         }
     }
 
-    public void QuickSort() {
+    public void QuickSort(int start, int end) {
+        // Check if there are elements to be sorted in the subarray
+        if (start < end) {
+            // Partition the array and get the partition index
+            int partition_Index = partition(start, end);
+            // Recursively sort elements before and after the partition
+            QuickSort(start, partition_Index - 1);
+            QuickSort(partition_Index + 1, end);
+        }
+    }
 
+    public int partition(int start, int end) {
+        // Select the pivot element, which is the last element in the array
+        int pivot = listNumber[end];
+        // Initialize the index of the smaller element
+        int i = (start - 1);
+
+        // Iterate through the subarray from 'start' to 'end - 1'
+        for (int j = start; j <= end - 1; j++) {
+            // If current element is smaller than or equal to the pivot
+            if (listNumber[j] < pivot) {
+                // Increment the index of the smaller element
+                i++;
+                // Swap array[i] and array[j]
+                int temp = listNumber[i];
+                listNumber[i] = listNumber[j];
+                listNumber[j] = temp;
+            }
+        }
+        // Swap the pivot element (array[end]) with the element at the index next to the smaller element (i + 1)
+        int temp = listNumber[i + 1];
+        listNumber[i + 1] = listNumber[end];
+        listNumber[end] = temp;
+
+        // Return the index of the pivot element after partitioning
+        return (i + 1);
     }
 
     //Stable algorithms
