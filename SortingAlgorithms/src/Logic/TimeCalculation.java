@@ -20,6 +20,14 @@ public class TimeCalculation {
         algoritms = new Algorithms();
     }
 
+    public Algorithms getAlgoritms() {
+        return algoritms;
+    }
+
+    public void setAlgoritms(Algorithms algoritms) {
+        this.algoritms = algoritms;
+    }
+    
     public double ms_Calculation() {
         final double MS_PER_SECUND = 1000;
         long START_MS = System.currentTimeMillis();
@@ -48,15 +56,15 @@ public class TimeCalculation {
         System.out.println("We are testing at: " + new Date()
                 + "\n Algorithm name: BubbleSort");// <- Name of the algorithm you are going to test
 
-        //algoritms.mergeSort();
-        algoritms.BubbleSort();
-
         resultMili = ms_Calculation();
         //Algorithm test in miliseconds:
-        algoritms.BubbleSort();
+        //algoritms.BubbleSort();
         //algoritms.mergeSort();
         resultNano = ns_Calculation();
         //Algorithm test in nanoseconds:
+        //algoritms.mergeSort();
+        //algoritms.BubbleSort();
+        
         //algoritms.mergeSort();
         algoritms.BubbleSort();
         System.out.println("TEST: Results from the execute"
@@ -100,15 +108,15 @@ public class TimeCalculation {
 
         TimerTask reapeat;
         reapeat = new TimerTask() {
-            double resultNano = 0;
-            double resultMili = 0;
-
+            
             @Override
             public void run() {
-                //Enter the test method you want to run:
-
+                //print the initial state of the list
+                
+                //Enter the test method you want to run:                
                 simpleTest();
-
+                //print resulting status from list
+                
             }// end run
         };//End of ImplicitClass 
 

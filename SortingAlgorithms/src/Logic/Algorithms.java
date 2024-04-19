@@ -146,6 +146,7 @@ public class Algorithms {
         int[] temp = new int[listNumber.length];
         // Call the helper method to perform Merge Sort
         mergeSortHelper(0, listNumber.length - 1, temp);
+        
     }
 
     private void mergeSortHelper(int low, int high, int[] temp) {
